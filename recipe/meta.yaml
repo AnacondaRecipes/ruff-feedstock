@@ -57,6 +57,7 @@ extra:
     reason: Client request
   recipe-maintainers:
     - ianaobi
+    - bkreider
     - zanieb
     - messense
     - charliermarsh
