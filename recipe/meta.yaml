@@ -18,14 +18,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - make
     - maturin
     - cargo-bundle-licenses
   host:
     - python
     - pip
-    - setuptools
-    - wheel
     - maturin
+    - toml
+    - wheel
   run:
     - python
 
