@@ -14,8 +14,8 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - python
+    - cross-python_{{ target_platform }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
@@ -31,7 +31,10 @@ requirements:
     - python
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     - ruff --help
   imports:
     - ruff
