@@ -15,7 +15,6 @@ build:
 requirements:
   build:
     - python
-    - cross-python_{{ target_platform }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
@@ -27,6 +26,8 @@ requirements:
     - pip
     - maturin
     - toml
+    - wheel
+
   run:
     - python
 
@@ -45,14 +46,13 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: An extremely fast Python linter, written in Rust.
-
-  # The remaining entries in this section are optional, but recommended.
   description: |
     An extremely fast Python linter, written in Rust. Ruff can be used to
     replace Flake8 (plus a variety of plugins), isort, pydocstyle, yesqa, and
     even a subset of pyupgrade and autoflake all while executing tens or
     hundreds of times faster than any individual tool.
   dev_url: https://github.com/charliermarsh/ruff
+  doc_url: https://docs.astral.sh/ruff/
 
 extra:
   recipe-maintainers:
