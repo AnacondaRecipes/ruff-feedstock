@@ -14,4 +14,4 @@ REM Run the maturin build via pip
 set PYTHONUTF8=1
 set PYTHONIOENCODING="UTF-8"
 set TMPDIR=tmpbuild_%PY_VER%
-%PYTHON% -m pip install . -vv
+%PYTHON% -m pip install . -vv --no-deps --no-build-isolation

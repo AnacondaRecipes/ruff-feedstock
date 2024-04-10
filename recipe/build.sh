@@ -12,4 +12,4 @@ popd
 
 # Run the maturin build via pip which works for direct and
 # cross-compiled builds.
-$PYTHON -m pip install . -vv
+$PYTHON -m pip install . -vv --no-deps --no-build-isolation
