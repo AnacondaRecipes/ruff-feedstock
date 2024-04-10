@@ -14,25 +14,27 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - python
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
-    - make
     - maturin
     - cargo-bundle-licenses
   host:
     - python
     - pip
+    - setuptools
+    - wheel
     - maturin
-    - toml
   run:
     - python
 
 test:
+  requires:
+    - pip
   commands:
     - ruff --help
+    - pip check
   imports:
     - ruff
 
