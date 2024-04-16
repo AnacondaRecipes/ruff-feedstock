@@ -28,7 +28,6 @@ requirements:
     - pip
     - maturin
     - toml
-    - wheel
   run:
     - python
 
