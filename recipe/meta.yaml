@@ -17,8 +17,10 @@ build:
 requirements:
   build:
     - python
+    - {{ compiler('c') }}     # [linux]
+    - {{ compiler('cxx') }}   # [linux]
     - {{ compiler('rust') }}
-    - make  # [linux]
+    - make                    # [linux]
     - maturin >=1.0,<2.0
     - cargo-bundle-licenses
   host:
