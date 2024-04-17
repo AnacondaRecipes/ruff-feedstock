@@ -1,5 +1,5 @@
 {% set name = "ruff" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,20 +7,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e62ed7f36b3068a30ba39193a14274cd706bc486fad521276458022f7bccb31d
+  sha256: a067daaeb1dc2baf9b82a32dae67d154d95212080c80435eb052d95da647763d
 
 build:
   number: 0
+  missing_dso_whitelist:
+    - '$RPATH/ld64.so.1'  # [s390x]
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - python
+    - {{ compiler('c') }}     # [linux]
+    - {{ compiler('cxx') }}   # [linux]
     - {{ compiler('rust') }}
-    - make
-    - maturin
+    - make                    # [linux]
+    - maturin >=1.0,<2.0
     - cargo-bundle-licenses
   host:
     - python
@@ -31,8 +32,11 @@ requirements:
     - python
 
 test:
+  requires:
+    - pip
   commands:
     - ruff --help
+    - pip check
   imports:
     - ruff
 
@@ -42,14 +46,13 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: An extremely fast Python linter, written in Rust.
-
-  # The remaining entries in this section are optional, but recommended.
   description: |
     An extremely fast Python linter, written in Rust. Ruff can be used to
     replace Flake8 (plus a variety of plugins), isort, pydocstyle, yesqa, and
     even a subset of pyupgrade and autoflake all while executing tens or
     hundreds of times faster than any individual tool.
   dev_url: https://github.com/charliermarsh/ruff
+  doc_url: https://docs.astral.sh/ruff
 
 extra:
   recipe-maintainers:
