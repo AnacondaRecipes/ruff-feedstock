@@ -10,7 +10,7 @@ source:
   sha256: a067daaeb1dc2baf9b82a32dae67d154d95212080c80435eb052d95da647763d
 
 build:
-  number: 0
+  number: 1
   missing_dso_whitelist:
     - '$RPATH/ld64.so.1'  # [s390x]
 
