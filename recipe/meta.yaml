@@ -1,5 +1,5 @@
 {% set name = "ruff" %}
-{% set version = "0.3.5" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a067daaeb1dc2baf9b82a32dae67d154d95212080c80435eb052d95da647763d
+  sha256: fd2b25ecaf907d6458fa842675382c8597b3c746a2dde6717fe3415425df0c17
 
 build:
-  number: 1
+  number: 0
   missing_dso_whitelist:
     - '$RPATH/ld64.so.1'  # [s390x]
+
+  script_env:
+    - JEMALLOC_SYS_WITH_LG_PAGE=16
 
 requirements:
   build:
@@ -23,10 +26,11 @@ requirements:
     - make                    # [linux]
     - maturin >=1.0,<2.0
     - cargo-bundle-licenses
+    - git                     # [unix]
   host:
     - python
     - pip
-    - maturin
+    - maturin >=1.0,<2.0
     - toml
   run:
     - python
