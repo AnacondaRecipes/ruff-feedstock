@@ -18,13 +18,13 @@ build:
 requirements:
   build:
     - python
-    # The C compiler is required because of missing libgcc-ng on linux
-    - {{ compiler('c') }}     # [linux]
     - {{ compiler('rust') }}
-    - make                    # [linux]
+    # The C compiler is required because of missing libgcc-ng on linux
+    - {{ compiler('c') }}  # [linux]
+    - make  # [linux]
+    - git  # [linux]
     - maturin >=1.0,<2.0
     - cargo-bundle-licenses
-    - git                     # [linux]
   host:
     - python
     - pip
