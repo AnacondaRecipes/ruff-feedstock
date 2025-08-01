@@ -57,7 +57,11 @@ about:
   doc_url: https://docs.astral.sh/ruff
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/46418
+    reason: Client request
   recipe-maintainers:
+    - ianaobi
     - zanieb
     - messense
     - charliermarsh
