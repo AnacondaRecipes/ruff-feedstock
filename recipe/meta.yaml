@@ -10,7 +10,7 @@ source:
   sha256: 4d047db3662418d4a848a3fdbfaf17488b34b62f527ed6f10cb8afd78135bc5c
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<37]
   script_env:
     - JEMALLOC_SYS_WITH_LG_PAGE=16
