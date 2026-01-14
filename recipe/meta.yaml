@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - make  # [linux]
     - git  # [linux]
+    - m2-git  # [win]
     - maturin >=1.0,<2.0
     - cargo-bundle-licenses
   host:
