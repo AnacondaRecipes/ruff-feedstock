@@ -19,7 +19,8 @@ requirements:
   build:
     - python
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}  # [linux]
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
     - make  # [linux]
     - git  # [linux]
     - maturin >=1.0,<2.0
