@@ -24,7 +24,7 @@ requirements:
     - make  # [linux]
     - git  # [linux]
     - m2-git  # [win]
-    - maturin >=1.0,<2.0
+    - maturin >=1.9,<2.0
     - cargo-bundle-licenses
   host:
     - python
