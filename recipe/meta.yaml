@@ -1,5 +1,5 @@
 {% set name = "ruff" %}
-{% set version = "0.14.10" %}
+{% set version = "0.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9a2e830f075d1a42cd28420d7809ace390832a490ed0966fe373ba288e77aaf4
+  sha256: c590fe13fb57c97141ae975c03a1aedb3d3156030cabd740d6ff0b0d601e203f
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - make  # [linux]
     - git  # [linux]
-    - m2-git  # [win]
+    - msys2-git  # [win]
     - maturin >=1.9,<2.0
     - cargo-bundle-licenses
   host:
