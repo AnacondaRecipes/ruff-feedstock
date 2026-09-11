@@ -1,5 +1,5 @@
 {% set name = "ruff" %}
-{% set version = "0.15.1" %}
+{% set version = "0.16.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c590fe13fb57c97141ae975c03a1aedb3d3156030cabd740d6ff0b0d601e203f
+  sha256: dcf8a73d2ff77e99dde91244b4da16feba7f14e6beeb4015dee7c5a909e99050
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
   host:
     - python
     - pip
-    - maturin >=1.9,<2.0
+    - maturin >=1.9.3,<2.0
     - toml
   run:
     - python
