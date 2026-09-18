@@ -1,13 +1,13 @@
 {% set name = "ruff" %}
-{% set version = "0.15.1" %}
+{% set version = "0.16.7" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c590fe13fb57c97141ae975c03a1aedb3d3156030cabd740d6ff0b0d601e203f
+  sha256: 5f71d004ac1263b22fa39462ac5ae618a4b77d58981af2cc79bf79a29c12b1a6
 
 build:
   number: 0
@@ -24,12 +24,12 @@ requirements:
     - make  # [linux]
     - git  # [linux]
     - msys2-git  # [win]
-    - maturin >=1.9,<2.0
+    - maturin >=1.9.3,<2.0
     - cargo-bundle-licenses
   host:
     - python
     - pip
-    - maturin >=1.9,<2.0
+    - maturin >=1.9.3,<2.0
     - toml
   run:
     - python
@@ -63,3 +63,6 @@ extra:
     - zanieb
     - messense
     - charliermarsh
+  skip-lints:
+    - python_build_tools_in_host
+    - reachable_url
