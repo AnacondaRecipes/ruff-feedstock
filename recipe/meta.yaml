@@ -63,3 +63,6 @@ extra:
     - zanieb
     - messense
     - charliermarsh
+  skip-lints:
+    - python_build_tools_in_host
+    - reachable_url
